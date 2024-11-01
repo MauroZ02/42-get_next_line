@@ -12,26 +12,55 @@
 
 #include "get_next_line.h"
 
-char	*get_next_line(int fd)
+static char	*read_from_file(int fd)
 {
-	int		bytes_read;
-	char	*buf;
-
-	buf = ft_calloc(7 + 1, sizeof(char));
+	int			bytes_read;
+	char		*buf;
+	
+	buf = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (!buf)
 		return (NULL);
-	bytes_read = read (fd, buf, 7);
-	//return (buf);
-	if (bytes_read <= 0)
+	bytes_read = 1;
+	while (bytes_read > 0 && !ft_strchr(buffer, '\n'))
+	{
+		bytes_read = read (fd, buf, BUFFER_SIZE);
+		buf[bytes_read] = '\0';
+		buffer = append_buffer(buffer, buf);
+	}
+	if (bytes_read == -1)
+		return (free (buf), NULL);
+	return (buffer);
+}
+
+char	*get_next_line(int fd)
+{
+	static char	*buffer;
+	char		*line;
+
+	if (fd < 0 || read(fd, NULL, 0) < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	return (buf);
+	if (!buffer)
+	buffer = ft_calloc(1, sizeof(char));
+	if	(!ft_strchr(buffer, '\n'))
+		return (free(buffer), NULL);
+	buffer = obtain_remaining(buffer);
+	return (line);
+}
+
+char *append_buffer(char *buffer, char *read_buffer)
+{
+ char *temp;
+
+ temp = ft_strjoin(basin_buffer, read_buffer);
+ free(basin_buffer);
+ return (temp);
 }
 
 int main()
 {
-	int	fd;
+	int		fd;
 	char	*line;
-	int	count;
+	int		count;
 
 	count = 0;
 	fd = open("example.txt", O_RDONLY);
@@ -43,7 +72,7 @@ int main()
 	while ((line = get_next_line(fd)) != NULL)
 	{
 		count++;
-		printf("[%d]:%s\n", count, line); //count is to show you the line numbers
+		printf("[%d]:%s\n", count, line); //count is to show the line numbers
 		free(line);
 		line = NULL;
 	}
