@@ -6,7 +6,7 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 13:40:03 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/10/30 18:42:45 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/11/02 20:17:32 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,16 @@ void	*ft_calloc(size_t n, size_t size)
 	return ((void *)ptr);
 }
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == (unsigned char)c)
-		{
-			return ((char *)&s[i]);
-		}
 		i++;
 	}
-	if ((unsigned char)c == '\0')
-		return ((char *)&s[i]);
-	return (NULL);
+	return (i);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -63,4 +57,22 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcpy(join, (char *)s1, len1 + 1);
 	ft_strlcat(join, s2, len1 + len2 + 1);
 	return (join);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == (unsigned char)c)
+		{
+			return ((char *)&s[i]);
+		}
+		i++;
+	}
+	if ((unsigned char)c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }
