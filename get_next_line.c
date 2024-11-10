@@ -6,7 +6,7 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 19:06:59 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/11/10 21:53:32 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/11/10 22:07:43 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,25 +138,25 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-int main(void)
-{
-	char *line;
-	//char *buffer;
-	int	fd;
-	int	line_number = 1;
+// int main(void)
+// {
+// 	char *line;
+// 	//char *buffer;
+// 	int	fd;
+// 	int	line_number = 1;
 
-	fd = open("./hola.txt", O_RDONLY);
-	if (fd < 0)
-		return (printf("Error opening the file\n"));
-	while ((line = get_next_line(fd)) != NULL)
-	{
-		printf("line [%d]: %s", line_number, line);
-		line_number++;
-		free(line);
-	}
-	close(fd);
-	// Libera cualquier contenido restante en buffer
-	//free(buffer);
-	printf("\nel buffer size es %d\n", BUFFER_SIZE);
-	return (0);
-}
+// 	fd = open("./hola.txt", O_RDONLY);
+// 	if (fd < 0)
+// 		return (printf("Error opening the file\n"));
+// 	while ((line = get_next_line(fd)) != NULL)
+// 	{
+// 		printf("line [%d]: %s", line_number, line);
+// 		line_number++;
+// 		free(line);
+// 	}
+// 	close(fd);
+// 	// Libera cualquier contenido restante en buffer
+// 	//free(buffer);
+// 	printf("\nel buffer size es %d\n", BUFFER_SIZE);
+// 	return (0);
+// }
