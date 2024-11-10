@@ -1,6 +1,8 @@
 hola
 como
 estas 
-somos Fabri estoy haciendo una prueba del buffer
+somos Fabri
 y tambien
 Mauro
+y estamos haciendo una prueba del buffer
+ 

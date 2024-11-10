@@ -6,7 +6,7 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 13:30:14 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/11/10 19:27:23 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/11/10 21:02:54 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stddef.h>
 # include <stdio.h>
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 10000000
 // #  ifndef MAX_FD
 // #   define MAX_FD 1024
 // #  endif

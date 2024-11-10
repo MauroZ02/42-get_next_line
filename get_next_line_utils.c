@@ -6,7 +6,7 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 13:40:03 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/11/10 14:52:43 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/11/10 21:53:06 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,30 +79,6 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size)
 	while (src[i] != '\0')
 		i++;
 	return (i);
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	size_t	i;
-	size_t	j;
-	char	*join;
-
-	i = 0;
-	j = 0;
-	if (!s1)
-		s1 = "";
-	if (!s2)
-		s2 = "";
-	while (s1[i] != '\0')
-		i++;
-	while (s2[j] != '\0')
-		j++;
-	join = ft_calloc(i + j + 1, sizeof(char));
-	if (!join)
-		return (NULL);
-	ft_strlcpy(join, (char *)s1, i + 1);
-	ft_strlcat(join, s2, i + j + 1);
-	return (join);
 }
 
 char	*ft_strchr(const char *s, int c)
