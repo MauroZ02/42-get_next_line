@@ -52,7 +52,13 @@ char	*read_till_nl(int fd, char *rest)
 		if (bytes_read < 0)
 		{
 			free(temp_buffer);
+			free(rest);
 			return (NULL);
+		}
+		if (bytes_read == 0)
+		{
+			free(temp_buffer);
+			return (rest);
 		}
 		temp_buffer[bytes_read] = '\0';
 		new_rest = ft_strjoin(rest, temp_buffer);
