@@ -6,7 +6,7 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 13:30:14 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/11/10 22:05:40 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/11/13 17:13:25 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <stdio.h>
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE
 // #  ifndef MAX_FD
 // #   define MAX_FD 1024
 // #  endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
 # endif
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
