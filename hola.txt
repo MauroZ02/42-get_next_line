@@ -1,8 +1,4 @@
+aqui empiza el fd
 hola
-como
-estas 
-somos Fabri
-y tambien
-Mauro
-y estamos haciendo una prueba del buffer
- 
+ estamos haciendo una prueba
+aqui termina el fd;

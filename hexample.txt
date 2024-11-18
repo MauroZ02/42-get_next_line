@@ -1,0 +1,6 @@
+aqui empieza el fd2
+012345678901234567890123456789012345678901234567890
+aaaaaaaaaaaaaaaaaa
+bbbbbbbbbbbbbbbbbb
+cccccccccccccccc
+aqui termina fd2;
