@@ -6,7 +6,7 @@
 /*   By: mzangaro <mzangaro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 19:06:59 by mzangaro          #+#    #+#             */
-/*   Updated: 2024/11/13 17:24:09 by mzangaro         ###   ########.fr       */
+/*   Updated: 2024/11/18 19:40:32 by mzangaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,7 @@ char	*read_till_nl(int fd, char *rest)
 	{
 		bytes_read = read(fd, temp_buffer, BUFFER_SIZE);
 		if (bytes_read < 0)
-		{
-			free(temp_buffer);
-			free(rest);
-			return (NULL);
-		}
+			return (free(temp_buffer), free(rest), NULL);
 		if (bytes_read == 0)
 		{
 			free(temp_buffer);
